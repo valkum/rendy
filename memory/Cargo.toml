@@ -14,7 +14,7 @@ description = "Rendy's memory manager"
 serde-1 = ["serde"]
 
 [dependencies]
-gfx-hal = "0.1"
+gfx-hal = {git = "https://github.com/gfx-rs/gfx", rev = "5b84957d47592969507fb9e9b69810af13098819"}
 derivative = "1.0"
 failure = "0.1"
 log = "0.4"

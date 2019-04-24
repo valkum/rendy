@@ -14,7 +14,7 @@ description = "Rendy's resource manager"
 no-slow-safety-checks = ["rendy-util/no-slow-safety-checks"]
 
 [dependencies]
-gfx-hal = "0.1"
+gfx-hal = { git = "https://github.com/gfx-rs/gfx", rev = "5b84957d47592969507fb9e9b69810af13098819"}
 crossbeam-channel = "0.2"
 derivative = "1.0"
 failure = "0.1"

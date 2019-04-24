@@ -184,6 +184,12 @@ pub struct ImageTextureConfig {
     pub sampler_info: gfx_hal::image::SamplerInfo,
 }
 
+impl ImageTextureConfig {
+    pub fn unorm() -> Self {
+        Self{repr: Repr::Unorm, ..Default::default() }
+    }
+}
+
 #[cfg(feature = "serde")]
 mod serde_image_format {
     //! Module for enabline serde to serialize and deserialize image formats
@@ -253,7 +259,7 @@ pub fn load_from_image(
 
     let (w, h) = image.dimensions();
     let (kind, layout) = config.kind.layout_and_kind(w, h);
-
+    
     let (vec, format, swizzle) = match image {
         DynamicImage::ImageLuma8(img) => (
             img.into_vec(),

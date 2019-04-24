@@ -14,7 +14,7 @@ description = "Rendy's queues and commands tools"
 no-slow-safety-checks = ["rendy-util/no-slow-safety-checks"]
 
 [dependencies]
-gfx-hal = "0.1"
+gfx-hal = { git = "https://github.com/gfx-rs/gfx", rev = "5b84957d47592969507fb9e9b69810af13098819" }
 derivative = "1.0"
 failure = "0.1"
 relevant = { version = "0.4", features = ["log", "backtrace"] }
