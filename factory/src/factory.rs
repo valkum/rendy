@@ -1027,8 +1027,10 @@ where
             .unzip();
 
         log::info!("Queues: {:#?}", get_queues);
-
+        #[cfg(feature = "vulkan")]
         let features = Features::GEOMETRY_SHADER | Features::TESSELLATION_SHADER;
+        #[cfg(feature = "metal")]
+        let features = Features::empty();
 
         let Gpu { device, mut queues } = unsafe { adapter.physical_device.open(&create_queues, features) }?;
 
